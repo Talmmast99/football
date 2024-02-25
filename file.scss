@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* functions */
+
+
+#app
+{
+    background-color: #333;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    position: relative;
+
+    .field-box
+    {
+        background-color: #151515;
+        position: relative;
+        #field
+        {   
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 450px;
+            width: 750px;
+            background-color: #61AD24; 
+            display: table;
+
+            > div
+            {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0; 
+
+                &.skeleton
+                {
+                    z-index: 999;
+                    border: 2px solid #fff;
+
+                    .center-line
+                    {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 0;
+                        height: 100%;
+                        border: 1px solid #fff;
+                    }
+
+                    .center-circle
+                    {
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 100%;
+                        border: 2px solid #fff;
+                        left: 50%;
+                        top: 50%;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .goal-left
+                    {
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 150px;
+                        border: 2px solid #fff;
+                        border-left: 0px;
+                    }
+
+                    .goal-right
+                    {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 150px;
+                        border: 2px solid #fff;
+                        border-right: 0px;
+                    }
+                }
+
+                &.parts
+                {
+                    z-index: 99;
+                    display: flex;
+                    .part
+                    {
+                        height: 100%;
+                        display: inline-block;
+                        width: calc(100% / 14);
+                        box-sizing: border-box;
+                        
+                        &.c-60A723
+                        {
+                            background-color: #60A723;
+                        }
+
+                        &.c-64AE25
+                        {
+                            background-color: #64AE25;
+                        }
+                    }
+                }
+
+                &.players
+                {
+                    z-index: 9999;
+
+                    .player 
+                    {
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 100%;
+                        background-color: #fff;
+                        position: absolute;
+                    }
+
+                    .player-name
+                    {
+                        transform: rotate(-90deg);
+                        position: absolute;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .settings
+    {
+        height: 100%;
+        border-left: 1px solid #232323;
+        background-color: #000;
+
+        .topbar
+        {
+            height: 60px;
+            border-bottom: 1px solid #232323;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            >div
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 14px;
+                &:hover
+                {
+                    background-color: #151515;
+                }
+            }
+        }
+
+        .container
+        {
+            height: calc(100% - 60px);
+            position: relative;
+            overflow-x: hidden;
+            // overflow-y: scroll;
+            padding: 10px 0px;
+            .box
+            {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                color: #fff;
+                padding: 10px;
+
+                &.active
+                {
+                    display: block;
+                }
+
+                &.stadium
+                {
+                    >div
+                    {
+                        height: fit-content;
+                        img
+                        {
+                            width: 100%;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                &.teams
+                {
+                    >div
+                    {
+                        display: block;
+                        background-color: #61ad24aa;
+                        width: 100%;
+                        padding: 11px 0px;
+                        margin: 5px 0px;
+                        /* border: 1px solid #d3d3d3; */
+                        text-align: center;
+                        font-size: 18px;
+                        font-weight: 800;
+                        cursor: pointer;
+                        transition: .4s;
+                        &:hover
+                        {
+                            background-color: #61ad24dd;
+                        }
+                    }
+                }
+
+                &.players 
+                {
+                    >div
+                    {
+                        margin: 10px 0px;
+                        input
+                        {
+                            display: block;
+                            height: 40px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .axt98
+    {
+        width: 300px;
+        position: absolute;
+        left: -300px;
+        top: 0;
+        border-right: 1px solid #232323;
+        background-color: #000;
+        height: 100%;
+        box-shadow: 0px 2px 24px rgba(255, 255, 255, 0.04);
+        transition: .5s;
+
+        &.left-0
+        {
+            left: 0px;
+        }
+
+        .control
+        {
+            position: absolute;
+            right: -30px;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+#popup-addNewPlayer
+{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    // transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    transition: .5s;
+
+    .container
+    {
+        height: 500px;
+        width: 700px;
+        background-color: #fff;
+        border-radius: 20px;
+        position: relative;
+        .close 
+        {
+            height: 40px;
+            width: 40px;
+            background-color: #F7F7F7;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            border: none;
+            transition: .2s;
+
+            &:hover
+            {
+                background-color: #dbdbdb;
+            }
+        }
+    }
+}
+
+.showPopup
+{
+    display: flex !important;
+}

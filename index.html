@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="file.css">
+</head>
+<body>
+    
+    <section id="app">
+        <div class="field-box">
+            <div class="stadium">
+                <div id="field">
+                    <!-- ⏳⏳⏳ -->
+                    <!-- Encapsulate all these elements in one container or generate them using JavaScript. -->
+                    <div class="skeleton">
+                        <div class="center-circle"></div>
+                        <div class="goal-left"></div>
+                        <div class="goal-right"></div>
+                        <div class="center-line"></div>
+                    </div>                    
+                    <div class="parts">
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                        <div class="part c-64AE25"></div>
+                        <div class="part c-60A723"></div>
+                    </div>
+                    <div class="players"></div>
+                </div>
+            </div>
+        </div>
+        <div class="settings">
+            <div class="topbar">
+                <div id="stadium" class="item-tab">
+                    stadium
+                </div>
+                <div id="team" class="item-tab">
+                    team
+                </div>
+                <div id="players" class="item-tab">
+                    players
+                </div>
+                <div id="settings" class="item-tab">
+                    settings
+                </div>
+            </div>
+            <div class="container">
+                <!-- ⏳⏳⏳ -->
+                <!-- All this box will be generate with javascript -->
+                <div class="box stadium active" data-key="stadium"></div>
+                <div class="box teams" data-key="team"></div>
+                <div class="box players" data-key="players">
+                    <button id="add-new-player">Ajouter Un Joueur</button>
+                </div>
+                <div class="box" data-key="settings">
+                    settings *
+                </div>
+            </div>
+        </div>
+        <div class="axt98">
+            <div class="control"></div>
+        </div>
+    </section>
+
+
+    <!-- convert this element to component -->
+    <div id="popup-addNewPlayer">
+        <div class="container">
+            <button class="close"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+        </div>
+    </div>
+
+
+    <!-- <v-player
+        heading="Andriannus Parasian"
+        subheading="Front-end Engineer"
+    ></v-player> -->
+
+    <!-- the magic -->
+    <script src="file.js" type="module"></script>
+    <!-- i want to transform all this app to components -->
+    <!-- <script src="./components/popups/players.js"></script> -->
+</body>
+</html>

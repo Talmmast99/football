@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* functions */
+#app {
+  background-color: #333;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  position: relative;
+}
+#app .field-box {
+  background-color: #151515;
+  position: relative;
+}
+#app .field-box #field {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 450px;
+  width: 750px;
+  background-color: #61AD24;
+  display: table;
+}
+#app .field-box #field > div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#app .field-box #field > div.skeleton {
+  z-index: 999;
+  border: 2px solid #fff;
+}
+#app .field-box #field > div.skeleton .center-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 100%;
+  border: 1px solid #fff;
+}
+#app .field-box #field > div.skeleton .center-circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#app .field-box #field > div.skeleton .goal-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 150px;
+  border: 2px solid #fff;
+  border-left: 0px;
+}
+#app .field-box #field > div.skeleton .goal-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 150px;
+  border: 2px solid #fff;
+  border-right: 0px;
+}
+#app .field-box #field > div.parts {
+  z-index: 99;
+  display: flex;
+}
+#app .field-box #field > div.parts .part {
+  height: 100%;
+  display: inline-block;
+  width: 7.1428571429%;
+  box-sizing: border-box;
+}
+#app .field-box #field > div.parts .part.c-60A723 {
+  background-color: #60A723;
+}
+#app .field-box #field > div.parts .part.c-64AE25 {
+  background-color: #64AE25;
+}
+#app .field-box #field > div.players {
+  z-index: 9999;
+}
+#app .field-box #field > div.players .player {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+}
+#app .field-box #field > div.players .player-name {
+  transform: rotate(-90deg);
+  position: absolute;
+  color: #fff;
+}
+#app .settings {
+  height: 100%;
+  border-left: 1px solid #232323;
+  background-color: #000;
+}
+#app .settings .topbar {
+  height: 60px;
+  border-bottom: 1px solid #232323;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#app .settings .topbar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+#app .settings .topbar > div:hover {
+  background-color: #151515;
+}
+#app .settings .container {
+  height: calc(100% - 60px);
+  position: relative;
+  overflow-x: hidden;
+  padding: 10px 0px;
+}
+#app .settings .container .box {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+}
+#app .settings .container .box.active {
+  display: block;
+}
+#app .settings .container .box.stadium > div {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#app .settings .container .box.stadium > div img {
+  width: 100%;
+  cursor: pointer;
+}
+#app .settings .container .box.teams > div {
+  display: block;
+  background-color: rgba(97, 173, 36, 0.6666666667);
+  width: 100%;
+  padding: 11px 0px;
+  margin: 5px 0px;
+  /* border: 1px solid #d3d3d3; */
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#app .settings .container .box.teams > div:hover {
+  background-color: rgba(97, 173, 36, 0.8666666667);
+}
+#app .settings .container .box.players > div {
+  margin: 10px 0px;
+}
+#app .settings .container .box.players > div input {
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+#app .axt98 {
+  width: 300px;
+  position: absolute;
+  left: -300px;
+  top: 0;
+  border-right: 1px solid #232323;
+  background-color: #000;
+  height: 100%;
+  box-shadow: 0px 2px 24px rgba(255, 255, 255, 0.04);
+  transition: 0.5s;
+}
+#app .axt98.left-0 {
+  left: 0px;
+}
+#app .axt98 .control {
+  position: absolute;
+  right: -30px;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  cursor: pointer;
+}
+
+#popup-addNewPlayer {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+#popup-addNewPlayer .container {
+  height: 500px;
+  width: 700px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+}
+#popup-addNewPlayer .container .close {
+  height: 40px;
+  width: 40px;
+  background-color: #F7F7F7;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+#popup-addNewPlayer .container .close:hover {
+  background-color: #dbdbdb;
+}
+
+.showPopup {
+  display: flex !important;
+}/*# sourceMappingURL=file.css.map */
